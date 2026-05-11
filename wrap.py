@@ -23,4 +23,6 @@ def ptr(arr: np.ndarray, ctype=p_float):
 
 result = dot(ptr(a), ptr(b), n)
 
-print(f"result: {result:.4f}")
+expected = np.dot(a, b)
+print(f"expected: {expected:.4f}")
+print(f"result:   {result:.4f}")
