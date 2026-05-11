@@ -63,3 +63,14 @@ print(f"numpy total:   {np_time:.6f}s")
 print(f"asm per call:  {asm_time / N_REPEATS * 1e6:.3f} µs")
 print(f"numpy per call:{np_time / N_REPEATS * 1e6:.3f} µs")
 print(f"speed ratio:   {np_time / asm_time:.2f}x numpy/asm")
+
+expected_grouped = (
+    np.dot(a[0::4], b[0::4])
+    + np.dot(a[2::4], b[2::4])
+    + np.dot(a[1::4], b[1::4])
+    + np.dot(a[3::4], b[3::4])
+)
+
+print(f"grouped expected: {expected_grouped:.4f}")
+print(f"asm result:       {result:.4f}")
+print(f"grouped diff:     {abs(expected_grouped - result):.6f}")
