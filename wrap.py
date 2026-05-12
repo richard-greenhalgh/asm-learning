@@ -74,3 +74,6 @@ expected_grouped = (
 print(f"grouped expected: {expected_grouped:.4f}")
 print(f"asm result:       {result:.4f}")
 print(f"grouped diff:     {abs(expected_grouped - result):.6f}")
+
+print("numpy config:")
+np.show_config()
